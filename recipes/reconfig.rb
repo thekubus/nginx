@@ -7,10 +7,12 @@
 # All rights reserved - Do Not Redistribute
 #
 
-package 'nginx' do
-  action :install
+cookbook_file '/etc/nginx/nginx.conf' do
+  source 'nginx.conf'
+  mode '0644'
+  action :create
 end
 
 service 'nginx' do
-  action [ :enable, :start]
+  action [ :restart]
 end
