@@ -11,14 +11,14 @@ service 'nginx' do
   action [:disable, :stop]
 end
 
-package 'nginx' do
-  action [:purge]
+service 'php5-fpm' do
+  action [:disable]
 end
 
 package 'nginx-common' do
   action [:purge]
 end
 
-package 'nginx-core' do
+package 'php5-common' do
   action [:purge]
 end
